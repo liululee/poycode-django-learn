@@ -30,3 +30,7 @@ def get_post_if_404(request, title):
 def get_post_404(request, title):
     post = get_object_or_404(Post, title=title)
     return render(request , 'post/detail.html', {'post': post})
+
+def index(request):
+    print("safdsafdsafdsaf")
+    return render(request, 'about.html')

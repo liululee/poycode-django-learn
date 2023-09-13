@@ -30,6 +30,10 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # Django实现验证码登录：https://www.poycode.cn/coding/python/django-tutorial-4/
+    'oauth.apps.OauthConfig',
+    'captcha',
+    # Django视图介绍及使用：https://www.poycode.cn/coding/python/django-tutorial-3/
     'bbs.apps.BbsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -38,6 +42,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+
+# Django实现验证码登录：https://www.poycode.cn/coding/python/django-tutorial-4/
+# Captcha settings 验证码配置
+CAPTCHA_LENGTH = 6  # 验证码长度
+CAPTCHA_FONT_SIZE = 30  # 验证码字体大小
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

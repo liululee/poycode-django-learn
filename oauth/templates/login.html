@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录</title>
+</head>
+
+<body>
+    <div>
+        <form method="POST">
+            {% csrf_token %}
+            <div>
+                <label for="username">账户</label>{{ form.username }}
+            </div>
+            <div></div><label for="password">密码</label>{{ form.password }}
+    </div>
+    <div><label for="captcha">验证码</label>{{ form.captcha.label_tag }} </div>
+    <div>{{ form.captcha }}</div>
+    
+    {% if form.captcha.errors %}
+    <span>{{ form.captcha.errors }}</span>
+    {% endif %}
+
+    <button type="submit">登录</button>
+    </form>
+    </div>
+</body>
+
+</html>

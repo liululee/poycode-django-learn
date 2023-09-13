@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录</title>
+</head>
+
+<body>
+    <div class="col-md-4 col-sm-6 border p-0 offset-md-4 offset-sm-6 my-5">
+        <h3 class="text-center bg-info p-2 text-white mb-0">注册</h3>
+        <form class='px-5 py-3 bg-white' action="/user/register/" method="post">
+            {% if message %}
+                <div class="alert alert-warning">{{ message }}</div>
+            {% endif %}
+            {% csrf_token %}
+            <div class="form-group">
+                {{ register_form.username.label_tag }}
+                {{ register_form.username }}
+            </div>
+            <div class="form-group">
+                {{ register_form.password1.label_tag }}
+                {{ register_form.password1 }}
+            </div>
+            <div class="form-group">
+                {{ register_form.password2.label_tag }}
+                {{ register_form.password2 }}
+            </div>
+            <div class="form-group">
+                {{ register_form.email.label_tag }}
+                {{ register_form.email }}
+            </div>
+            <div class="form-group">
+                {{ register_form.captcha.errors }}
+                {{ register_form.captcha.label_tag }}
+                {{ register_form.captcha }}
+            </div>
+            <div class="pt-3">
+                <p class="text-center m-0"><button type="submit" class="btn btn-primary btn-block mb-5">立即注册</button></p>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>
