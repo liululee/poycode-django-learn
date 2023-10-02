@@ -23,13 +23,15 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("", views.index, name='index'),
     path('hello', views.hello, name='hello'),
-    path('post/<str:title>', views.get_post, name='post'),
-    path('bbs/posts', views.get_posts, name='post_list'),
-    path('bbs/post/<str:title>', views.get_post_with_template, name='post_detail'),
-    path('bbs/post/404/<str:title>', views.get_post_if_404, name ='post_404_detail'),
-    path("bbs/about/", TemplateView.as_view(template_name="about.html")),
+    # path('post/<str:title>', views.get_post, name='post'),
+    # path('bbs/posts', views.get_posts, name='post_list'),
+    # path('bbs/post/<str:title>', views.get_post_with_template, name='post_detail'),
+    # path('bbs/post/404/<str:title>', views.get_post_if_404, name ='post_404_detail'),
+    # path("bbs/about/", TemplateView.as_view(template_name="about.html")),
 
     # Django实现验证码登录
     path('auth/', include('oauth.urls')),
-    path('captcha', include('captcha.urls'))
+    path('captcha', include('captcha.urls')),
+    # Django restframework
+    path('bbs', include('bbs.urls'))
 ]

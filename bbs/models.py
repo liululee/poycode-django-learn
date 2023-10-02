@@ -3,10 +3,11 @@ from django.utils import timezone
 
 # Create your models here.
 class Post(models.Model):
-    title = models.CharField(max_length=200)
-    content = models.TextField()
-    pub_date  = models.DateTimeField(auto_now_add=True)
+    title = models.CharField(max_length=200, verbose_name='标题')
+    content = models.TextField(verbose_name='内容')
+    pub_date  = models.DateTimeField(auto_now_add=True, verbose_name='发布日期')
     
+    # 模型数据验证
     def pub_date_valid(self):
         return self.pub_date < timezone.now()
 
